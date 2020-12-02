@@ -7,7 +7,7 @@ import HeaderRight from './HeaderRight';
 
 const Header = () => {
   return (
-    <HeaderWrap fluid={true}>header
+    <HeaderWrap fluid={true}>
       <Navbar>
         <NavbarBrand>logo</NavbarBrand>
         <NavItem>
