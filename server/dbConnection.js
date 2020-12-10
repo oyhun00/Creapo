@@ -1,4 +1,4 @@
-const mysql = require("mysql");
+const mysql = require('mysql');
 const config = require('./config/db-config.json');
 
 module.exports = () => ({
