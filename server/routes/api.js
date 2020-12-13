@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mysql = require('mysql');
 const config = require('../config/db-config.json');
-const test = require('../DataBase');
+const Database = require('../DataBase');
 
 // const connection = mysql.createConnection({
 //   host: config.host,
@@ -14,12 +14,26 @@ const test = require('../DataBase');
 
 // connection.connect();
 
-const q = "SELECT * FROM CREAPO_USER";
+const q = `SELECT * FROM CREAPO_USER WHERE ID = :ID`;
 
 router.get('/', async (req, res) => {
-  var result = await test("SELECT * FROM CREAPO_USER");
-  console.log(result);
-  res.send();
+  Database.execute(
+    (database) => database.query(
+      q,
+      {
+        ID: 1
+      }
+    )
+    .then((rows) => {
+      console.log(rows);
+      res.json({
+        success: true,
+        code: 1,
+        message: 'test',
+        result: rows,
+      });
+    }),
+  )
 })
 
 module.exports = router;
