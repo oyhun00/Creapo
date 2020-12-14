@@ -25,18 +25,13 @@ const Header = () => {
 }
 
 const HeaderWrap = styled(Navbar)`
-
+  padding: 1.5rem 2.5rem;
 `;
 
 const NavItems = styled(NavItem)`
   :not(:last-child) {
-    margin-right: 12px;
+    margin-right: 1rem;
   }
-
-  :hover {
-    opacity: 0.7;
-  }
-
 `;
 
 export default Header;
