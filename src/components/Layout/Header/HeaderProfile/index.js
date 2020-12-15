@@ -1,4 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+
+import * as actions from '../../../../actions/HeaderDropDown';
+
 import styled from 'styled-components';
 import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -6,15 +10,29 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import HeaderProfileBox from './HeaderProfileBox';
 
 const HeaderProfile = () => {
-  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dispatch = useDispatch();
 
-  const toggle = () => {
-    setDropdownOpen(prevState => !prevState)
-  };
+  const { isOpen } = useSelector((state) => state.isOpen);
+
+  const dropDown = useCallback(() => {
+    dispatch(actions.dropDownOpen());
+  }, [dispatch]);
+  
+  // const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  // const toggle = () => {
+  //   setDropdownOpen(prevState => !prevState)
+  // };
+
+
+
+  useEffect(() => {
+    console.log('Component did mount.');
+  }, []);
 
   return (
-    <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-      <DropdownToggle tag="div" data-toggle="dropdown" aria-expanded={dropdownOpen}>
+    <Dropdown isOpen={isOpen} toggle={dropDown}>
+      <DropdownToggle tag="div" data-toggle="dropdown" aria-expanded={isOpen}>
         <ProfileIcons icon={faUser} />
       </DropdownToggle>
       <DropdownMenuCustom right>
