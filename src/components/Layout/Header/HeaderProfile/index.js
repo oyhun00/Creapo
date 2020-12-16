@@ -12,10 +12,11 @@ import HeaderProfileBox from './HeaderProfileBox';
 const HeaderProfile = () => {
   const dispatch = useDispatch();
 
-  const { isOpen } = useSelector((state) => state.isOpen);
+  const { isOpen } = useSelector((state) => state.HeaderDropDown);
+  console.log(isOpen)
 
   const dropDown = useCallback(() => {
-    dispatch(actions.dropDownOpen());
+    dispatch(actions.HeaderDropDown());
   }, [dispatch]);
   
   // const [dropdownOpen, setDropdownOpen] = useState(false);

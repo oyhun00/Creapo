@@ -1,4 +1,4 @@
-import * as dropDownOpen from '../actions/HeaderDropDown';
+import * as HeaderDropDown from '../actions/HeaderDropDown';
 
 const initialState = {
   isOpen: false,
@@ -7,8 +7,11 @@ const initialState = {
 const reducers = (state = initialState, action) => {
   const { type } = action;
   switch (type) {
-    case dropDownOpen.DROPDOWN_OPEN: {
+    case HeaderDropDown.DROPDOWN_OPEN: {
       return { isOpen: !state.isOpen };
+    }
+    default: {
+      return state;
     }
   }
 }
