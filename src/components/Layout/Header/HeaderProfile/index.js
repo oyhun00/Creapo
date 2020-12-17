@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import * as actions from '../../../../actions/HeaderDropDown';
@@ -10,25 +10,14 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import HeaderProfileBox from './HeaderProfileBox';
 
 const HeaderProfile = () => {
-  const dispatch = useDispatch();
-
   const { isOpen } = useSelector((state) => state.HeaderDropDown);
-  console.log(isOpen)
 
+  const dispatch = useDispatch();
   const dropDown = useCallback(() => {
     dispatch(actions.HeaderDropDown());
   }, [dispatch]);
-  
-  // const [dropdownOpen, setDropdownOpen] = useState(false);
-
-  // const toggle = () => {
-  //   setDropdownOpen(prevState => !prevState)
-  // };
-
-
 
   useEffect(() => {
-    console.log('Component did mount.');
   }, []);
 
   return (
