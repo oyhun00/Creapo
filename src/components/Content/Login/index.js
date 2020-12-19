@@ -5,7 +5,9 @@ import { Container, Row, Col } from 'reactstrap';
 const Login = () => {
   return (
     <ContainerWrap fluid={true}>
-
+      <div>
+        
+      </div>
     </ContainerWrap>
   );
 }

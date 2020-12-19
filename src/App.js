@@ -11,9 +11,9 @@ const store = createStore(reducers);
 const App = () => {
   return (
     <Provider store={store}>
-      {/* <Header />
-      <ContentMain /> */}
-      <Login />
+      <Header />
+      <ContentMain />
+      {/* <Login /> */}
     </Provider>
   );
 }
