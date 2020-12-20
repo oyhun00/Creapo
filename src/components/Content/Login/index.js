@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Container, Row, Col } from 'reactstrap';
+import { Container } from 'reactstrap';
 
 const Login = () => {
   return (
