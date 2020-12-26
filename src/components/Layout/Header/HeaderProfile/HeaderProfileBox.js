@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const HeaderProfileBox = () => {
   return (
@@ -9,8 +10,12 @@ const HeaderProfileBox = () => {
       </ProfileBoxHeader>
       <ProfileBoxBody>
         Creapo에 회원 가입하시면 더 많은 혜택과 아마 로또가 당첨될걸요?
-        <LinkCustom>로그인</LinkCustom>
-        <LinkCustom>회원가입</LinkCustom>
+        <LinkCustom>
+          <Link to="/login">로그인</Link>
+        </LinkCustom>
+        <LinkCustom>
+          <Link to="/login">회원가입</Link>
+          </LinkCustom>
       </ProfileBoxBody>
     </>
   );
@@ -33,10 +38,12 @@ const ProfileBoxBody = styled.div`
   color: #474747;
 `;
 
-const LinkCustom = styled.a`
-  color: #f1bd1f;
-  cursor: pointer;
-  text-decoration: none !important;
+const LinkCustom = styled.span`
+  a {
+    color: #f1bd1f;
+    cursor: pointer;
+    text-decoration: none !important;
+  }
 
   :hover {
     color: #f1bd1f;

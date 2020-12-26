@@ -1,17 +1,18 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
 import createStore from './store';
 import reducers from './reducers';
-import Header from './components/Layout/Header';
-import ContentMain from './components/Content';
+import MainRouter from './components/Router';
 
 const store = createStore(reducers);
 
 const App = () => {
   return (
     <Provider store={store}>
-      <Header />
-      <ContentMain />
+      <BrowserRouter>
+        <MainRouter />
+      </BrowserRouter>
     </Provider>
   );
 }
