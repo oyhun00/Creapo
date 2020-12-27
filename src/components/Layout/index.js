@@ -1,14 +1,15 @@
 import React from 'react';
 import Header from './Header';
 import SwitchRouter from '../Router/Switch';
+import { BrowserRouter } from 'react-router-dom';
 
 const Main = () => {
   return (
     <>
       <Header />
-      <div>
+      <BrowserRouter>
         <SwitchRouter />
-      </div>
+      </BrowserRouter>
     </>
   );
 }
