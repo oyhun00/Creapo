@@ -4,16 +4,6 @@ const mysql = require('mysql');
 const config = require('../config/db-config.json');
 const Database = require('../DataBase');
 
-// const connection = mysql.createConnection({
-//   host: config.host,
-//   port: config.port,
-//   user: config.user,
-//   password: config.password,
-//   database: config.database,
-// });
-
-// connection.connect();
-
 const q = `SELECT * FROM CREAPO_USER WHERE ID = :ID`;
 
 router.get('/', async (req, res) => {
