@@ -1,9 +1,7 @@
-import React from 'react';
+import ContentMain from './ContentMain';
+import Creation from './Creation';
 
-const ContentMain = () => {
-  return (
-    <div>hello</div>
-  )
+export default {
+  ContentMain,
+  Creation
 }
-
-export default ContentMain;

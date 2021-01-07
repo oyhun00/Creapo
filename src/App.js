@@ -1,13 +1,19 @@
 import React from 'react';
-import Header from './components/Layout/Header';
-import ContentMain from './components/Content';
+import { Provider } from 'react-redux';
+import { BrowserRouter } from 'react-router-dom';
+import createStore from './store';
+import reducers from './reducers';
+import MainRouter from './components/Router';
+
+const store = createStore(reducers);
 
 const App = () => {
   return (
-    <>
-      <Header />
-      <ContentMain />
-    </>
+    <Provider store={store}>
+      <BrowserRouter>
+        <MainRouter />
+      </BrowserRouter>
+    </Provider>
   );
 }
 

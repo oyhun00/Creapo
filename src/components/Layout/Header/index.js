@@ -1,39 +1,37 @@
-import React, { useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
 import styled from 'styled-components';
 import {
-  Container, Navbar, NavbarBrand, NavItem
+  Navbar, Nav, NavbarBrand, NavItem
 } from 'reactstrap';
-import HeaderRight from './HeaderRight';
+import HeaderProfile from './HeaderProfile';
+import HeaderAlarm from './HeaderAlarm';
 
 const Header = () => {
-  const loadData_Promise = async () => {
-    try {
-      await axios.get('http://localhost:3002/api');
-    } catch(err) {
-      console.log(err);
-    }
-  }
-
-
-  useEffect(() => {
-    loadData_Promise();
-  }, []);
-
   return (
-    <HeaderWrap fluid={true}>
-      <Navbar>
+    <div>
+      <HeaderWrap>
         <NavbarBrand>logo</NavbarBrand>
-        <NavItem>
-          <HeaderRight />
-        </NavItem>
-      </Navbar>
-    </HeaderWrap>
+        <Nav className="ml-auto">
+          <NavItems>
+            <HeaderAlarm />
+          </NavItems>
+          <NavItems>
+            <HeaderProfile />
+          </NavItems>
+        </Nav>
+      </HeaderWrap>
+    </div>
   );
 }
 
-const HeaderWrap = styled(Container)`
+const HeaderWrap = styled(Navbar)`
+  padding: 1.5rem 2.5rem;
+`;
 
+const NavItems = styled(NavItem)`
+  :not(:last-child) {
+    margin-right: 1rem;
+  }
 `;
 
 export default Header;
