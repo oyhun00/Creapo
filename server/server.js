@@ -7,7 +7,7 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-const postAPI = require('./post/PostRouter');
+const postAPI = require('./routes/post/PostRouter');
 
 app.use('/api/post', postAPI);
 

@@ -7,13 +7,13 @@ const Database = require('../../DataBase');
 const SELECT_POST = `SELECT * FROM CREAPO_POST`;
 
 router.get('/', async (req, res) => {
+  console.log('11');
   const { rows } = await Database.execute(
     (database) => database.query(
       SELECT_POST,
     )
   );
 
-  console.log(rows);
   res.json({
     success: true,
     code: 1,

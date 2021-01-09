@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import * as actions from '../../actions/GridLayoutAction';
 
 import styled from 'styled-components';
@@ -9,11 +10,12 @@ const ContentMain = () => {
   const dispatch = useDispatch();
   
   useEffect(() => {
+    axios.get('http://localhost:3001/api/post/').then((res)=> console.log(res));
     dispatch(actions.GridLayout());
   }, [dispatch]);
   
   return (
-    <GridLayout className="grid-layout">
+    <GridLayout className="grid-layout"> 
       <GridSizer className="grid-sizer"></GridSizer>
       <GridItem className="grid-item grid-text-item">
         <p>
