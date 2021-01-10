@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import * as actions from '../../actions/GridLayoutAction';
+import * as GridLayoutAction from '../../actions/GridLayoutAction';
+import * as PostAction from '../../actions/Post/PostAction';
 
 import styled from 'styled-components';
 
@@ -10,8 +11,8 @@ const ContentMain = () => {
   const dispatch = useDispatch();
   
   useEffect(() => {
-    axios.get('http://localhost:3001/api/post/').then((res)=> console.log(res));
-    dispatch(actions.GridLayout());
+    dispatch(PostAction.GetPost());
+    dispatch(GridLayoutAction.GridLayout());
   }, [dispatch]);
   
   return (
