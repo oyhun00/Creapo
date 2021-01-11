@@ -1,5 +1,5 @@
 import ContentMain from './ContentMain';
-import Creation from './Creation';
+import Creation from './Post';
 
 export default {
   ContentMain,
