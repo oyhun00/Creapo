@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import {
   Navbar, Nav, NavbarBrand, NavItem
 } from 'reactstrap';
-import HeaderProfile from './HeaderProfile';
+import HeaderProfileContainer from './HeaderProfile';
 import HeaderAlarm from './HeaderAlarm';
 
 const Header = () => {
@@ -16,7 +16,7 @@ const Header = () => {
             <HeaderAlarm />
           </NavItems>
           <NavItems>
-            <HeaderProfile />
+            <HeaderProfileContainer />
           </NavItems>
         </Nav>
       </HeaderWrap>

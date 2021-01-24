@@ -1,5 +1,4 @@
 import { createAction, handleActions } from 'redux-actions';
-import * as HeaderDropDown from '../../../actions/HeaderDropDown';
 
 const DROPDOWN_OPEN = 'header/DROPDOWN_OPEN';
 
@@ -30,4 +29,4 @@ export default handleActions({
   }
 }, initialState)
 
-export default reducers;
+// export default reducers;

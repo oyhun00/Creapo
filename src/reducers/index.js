@@ -4,11 +4,8 @@ import GridLayout from './Layout/GridLayout';
 
 import PostReducer from './Post/PostReducer';
 
-const rootReducer = combineReducers({
+export default combineReducers({
   HeaderDropDown,
   GridLayout,
-
   PostReducer,
-});
-
-export default rootReducer;
+})
