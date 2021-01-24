@@ -1,27 +1,43 @@
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import * as actions from '../../actions/GridLayoutAction';
-
 import styled from 'styled-components';
+import axios from 'axios';
+import * as GridLayoutAction from '../../actions/GridLayoutAction';
+import * as PostAction from '../../actions/Post/PostAction';
+import Post from './Post';
 
 const ContentMain = () => {
   const dispatch = useDispatch();
+  const posts = [
+    {
+      id: 1,
+      text: 'hello',
+    },
+    {
+      id: 2,
+      text: 'hello',
+    }
+  ];
+
+  const postList = posts.map((v, index) => (<Post data={v} key={v.reportId} index={index} />))
   
   useEffect(() => {
-    dispatch(actions.GridLayout());
+    dispatch(PostAction.GetPost());
+    // dispatch(GridLayoutAction.GridLayout());
   }, [dispatch]);
   
   return (
-    <GridLayout className="grid-layout">
+    <GridLayout className="grid-layout"> 
       <GridSizer className="grid-sizer"></GridSizer>
-      <GridItem className="grid-item grid-text-item">
+      {postList}
+      {/* <GridItem className="grid-item grid-text-item">
         <p>
           <Link to="/hello">hello</Link>
         </p>
       </GridItem>
       <GridItem className="grid-item">hello</GridItem>
-      <GridItem className="grid-item">hello</GridItem>
+      <GridItem className="grid-item">hello</GridItem> */}
     </GridLayout>
   )
 }
