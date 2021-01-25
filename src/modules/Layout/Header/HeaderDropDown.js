@@ -8,7 +8,7 @@ const initialState = {
   isOpen: false,
 };
 
-// const reducers = (state = initialState, action) => {
+// const modules = (state = initialState, action) => {
 //   const { type } = action;
 //   switch (type) {
 //     case HeaderDropDown.DROPDOWN_OPEN: {
@@ -21,12 +21,12 @@ const initialState = {
 // }
 
 export default handleActions({
-  [DROPDOWN_OPEN]: ({ isOpen }) => {
+  [DROPDOWN_OPEN]: (state) => {
     return {
       ...state,
-      isOpen: !isOpen
+      isOpen: !state.isOpen
     }
   }
 }, initialState)
 
-// export default reducers;
+// export default modules;

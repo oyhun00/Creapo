@@ -1,9 +1,5 @@
 import React, { useEffect, useCallback } from 'react';
-import { useSelector, useDispatch, connect } from 'react-redux';
-import { bindActionsCreators } from 'redux';
-import * as HeaderActions from '../../../../reducers/Layout/Header/HeaderDropDown'
 
-import * as actions from '../../../../actions/HeaderDropDown';
 
 import styled from 'styled-components';
 import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
@@ -11,20 +7,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import HeaderProfileBox from './HeaderProfileBox';
 
-const HeaderProfile = (a,b) => {
-  console.log(a,b)
-  const { isOpen } = useSelector((state) => state.HeaderDropDown);
-
-  const dispatch = useDispatch();
-  const dropDown = useCallback(() => {
-    dispatch(actions.HeaderDropDown());
-  }, [dispatch]);
-
-  useEffect(() => {
-  }, []);
-
+const HeaderProfile = ({ isOpen, onToggle }) => {
+    console.log(isOpen);
   return (
-    <Dropdown isOpen={isOpen} toggle={dropDown}>
+    <Dropdown isOpen={isOpen} toggle={onToggle}>
       <DropdownToggle tag="div" data-toggle="dropdown" aria-expanded={isOpen}>
         <ProfileIcons icon={faUser} />
       </DropdownToggle>

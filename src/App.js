@@ -1,11 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import createStore from './store';
-import reducers from './reducers';
+import store from './store';
+import modules from './modules';
 import MainRouter from './components/Router';
 
-const store = createStore(reducers);
+// const store = createStore(modules);
 
 const App = () => {
   return (

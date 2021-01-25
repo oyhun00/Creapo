@@ -1,9 +1,9 @@
 import { createStore } from 'redux';
-import reducers from '../reducers';
+import modules from '../modules';
 
 const configure = () => {
   const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
-  const store = createStore(reducers, devTools);
+  const store = createStore(modules, devTools);
 
   return store;
 }

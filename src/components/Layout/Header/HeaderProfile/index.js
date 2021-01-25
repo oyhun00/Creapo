@@ -1,22 +1,28 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import * as HeaderActions from '../../../../reducers/Layout/Header/HeaderDropDown';
+import { useSelector, useDispatch } from 'react-redux';
+import { headerDropDown } from '../../../../modules/Layout/Header/HeaderDropDown';
+
 import HeaderProfile from './HeaderProfile';
 
 
 const HeaderProfileContainer = () => {
-  const mapStateToProps = (state) => ({
-    isOpen: state.isOpen,
-  })
-  
-  const mapDispatchToProps = (dispatch) => {
-    return bindActionCreators(HeaderActions, dispatch);
-  }
-  
-  
+  const isOpen = useSelector(state => state.isOpen);
+
+  const dispatch = useDispatch();
+  const onToggle = () => dispatch(headerDropDown());
+
+  // const mapStateToProps = (state) => ({
+  //   isOpen: state.isOpen,
+  // })
+  //
+  // const mapDispatchToProps = (dispatch) => {
+  //   return bindActionCreators(HeaderActions, dispatch);
+  // }
+  //
+  //
   return (
-    <HeaderProfile props={mapStateToProps, mapDispatchToProps} />
+    <HeaderProfile isOpen={isOpen} onToggle={onToggle} />
   );
 }
 
