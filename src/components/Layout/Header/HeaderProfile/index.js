@@ -5,7 +5,7 @@ import * as HeaderActions from '../../../../reducers/Layout/Header/HeaderDropDow
 import HeaderProfile from './HeaderProfile';
 
 
-const HeaderProfile = () => {
+const HeaderProfileContainer = () => {
   const mapStateToProps = (state) => ({
     isOpen: state.isOpen,
   })
@@ -21,4 +21,4 @@ const HeaderProfile = () => {
 }
 
 
-export default HeaderProfile;
+export default HeaderProfileContainer;
