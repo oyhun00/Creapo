@@ -1,37 +1,57 @@
 import React from 'react';
 import styled from 'styled-components';
 import {
-  Navbar, Nav, NavbarBrand, NavItem
+  Container, Row, Col
 } from 'reactstrap';
 import HeaderProfileContainer from './HeaderProfile';
-import HeaderAlarm from './HeaderAlarm';
 
 const Header = () => {
   return (
-    <div>
-      <HeaderWrap>
-        <NavbarBrand>logo</NavbarBrand>
-        <Nav className="ml-auto">
-          <NavItems>
-            <HeaderAlarm />
-          </NavItems>
-          <NavItems>
-            <HeaderProfileContainer />
-          </NavItems>
-        </Nav>
-      </HeaderWrap>
-    </div>
+    <CustomContainer fluid={true}>
+      <Row>
+        <HeaderLeft xs="4">
+        </HeaderLeft>
+        <HeaderCenter xs="4">
+          <TitleLogo>CREAPO</TitleLogo>
+        </HeaderCenter>
+        <HeaderRight xs="4">
+          <HeaderProfileContainer />
+        </HeaderRight>
+      </Row>
+    </CustomContainer>
   );
 }
 
-const HeaderWrap = styled(Navbar)`
-  padding: 1.5rem 2.5rem;
+const CustomContainer = styled(Container)`
+
+  @media (min-width: 768px) {
+    width: 95%;
+  }
+
+  @media (min-width: 992px) {
+    width: 90%;
+  }
+
+  @media (min-width: 1200px) {
+    width: 90%;
+    padding: 2rem 0;
+  }
 `;
 
-const NavItems = styled(NavItem)`
-  :not(:last-child) {
-    margin-right: 1rem;
-  }
+const HeaderLeft = styled(Col)`
+  text-align: left;
+`;
+
+const HeaderCenter = styled(Col)`
+  text-align: center;
+`;
+
+const HeaderRight = styled(Col)`
+  text-align: right;
+`;
+
+const TitleLogo = styled.h2`
+  color: #fff;
 `;
 
 export default Header;

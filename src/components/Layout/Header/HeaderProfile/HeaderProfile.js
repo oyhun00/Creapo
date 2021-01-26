@@ -1,6 +1,4 @@
-import React, { useEffect, useCallback } from 'react';
-
-
+import React from 'react';
 import styled from 'styled-components';
 import { Dropdown, DropdownMenu, DropdownToggle } from 'reactstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,7 +6,6 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import HeaderProfileBox from './HeaderProfileBox';
 
 const HeaderProfile = ({ isOpen, onToggle }) => {
-    console.log(isOpen);
   return (
     <Dropdown isOpen={isOpen} toggle={onToggle}>
       <DropdownToggle tag="div" data-toggle="dropdown" aria-expanded={isOpen}>

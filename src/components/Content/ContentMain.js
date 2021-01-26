@@ -31,6 +31,7 @@ const ContentMain = () => {
     <GridLayout className="grid-layout"> 
       <GridSizer className="grid-sizer"></GridSizer>
       {postList}
+      <Temp to="/board/post">go</Temp>
       {/* <GridItem className="grid-item grid-text-item">
         <p>
           <Link to="/hello">hello</Link>
@@ -41,6 +42,10 @@ const ContentMain = () => {
     </GridLayout>
   )
 }
+
+const Temp = styled(Link)`
+  color: #fff;
+`;
 
 const GridLayout = styled.div`
   position: relative;
