@@ -1,16 +1,18 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { titleInputChange } from '../../../modules/Content/Post/PostingReducer';
+import * as PostingReducer from '../../../modules/Content/Post/PostingReducer';
 import Posting from './Posting';
 
 const PostingContainer = () => {
-  const isOpen = useSelector(({headerDropDown}) => headerDropDown.isOpen, []);
+  const { titleInputChange } = PostingReducer;
+  const postingStateProps = useSelector(({PostingReducer}) => PostingReducer, []);
 
   const dispatch = useDispatch();
-  const onToggle = () => dispatch(titleInputChange());
+  const handleChangeTitle = (e) => dispatch(titleInputChange(e.target.value));
+  console.log(titleInputChange)
 
   return (
-    <Posting />
+    <Posting data={postingStateProps} onChangeTitle={handleChangeTitle} />
   )
 }
 

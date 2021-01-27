@@ -2,7 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 import {Container, Row, Col, Input, Button} from 'reactstrap';
 
-const Posting = () => {
+const Posting = ({ data, handleChangeTitle }) => {
+  const { title } = data;
+  console.log(handleChangeTitle)
+
   return (
     <ContainerWrap fluid={true}>
       <PaddingBox>
@@ -10,7 +13,7 @@ const Posting = () => {
           <Col sm={{ size: 8, offset: 2 }}>
             <MarginBottomRow>
               <Col>
-                <CustomInput placeholder="타이틀을 입력해 주세요." bsSize="lg" value="타이틀을 입력해 주세요." />
+                <CustomInput placeholder="타이틀을 입력해 주세요." bsSize="lg" onChange={handleChangeTitle} />
               </Col>
             </MarginBottomRow>
             <MarginBottomRow>

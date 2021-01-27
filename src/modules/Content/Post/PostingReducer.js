@@ -5,14 +5,15 @@ const TITLE_INPUT_CHANGE = 'posting/TITLE_INPUT_CHANGE';
 export const titleInputChange = createAction(TITLE_INPUT_CHANGE);
 
 const initialState = {
-  title: '',
+  title: 'asd',
 };
 
 export default handleActions({
-  [TITLE_INPUT_CHANGE]: (state, { value }) => {
+  [TITLE_INPUT_CHANGE]: (state, action) =>
+  {console.log(action)
     return {
       ...state,
-      title: value
+      title: action
     }
   }
 }, initialState);

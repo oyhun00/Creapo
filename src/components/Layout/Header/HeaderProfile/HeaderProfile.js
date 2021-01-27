@@ -6,6 +6,7 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
 import HeaderProfileBox from './HeaderProfileBox';
 
 const HeaderProfile = ({ isOpen, onToggle }) => {
+  console.log(onToggle)
   return (
     <Dropdown isOpen={isOpen} toggle={onToggle}>
       <DropdownToggle tag="div" data-toggle="dropdown" aria-expanded={isOpen}>
