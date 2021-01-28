@@ -7,7 +7,7 @@ import Login from '../Content/Login/';
 const MainRouter = () => {
   return (
     <>
-      <Route exact path="/" component={Main}></Route>
+      <Route exact={true} path="/" component={Main}></Route>
       <Route exact path="/login" component={Login}></Route>
     </>
   )

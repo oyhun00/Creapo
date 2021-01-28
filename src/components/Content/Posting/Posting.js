@@ -55,6 +55,13 @@ const CustomInput = styled(Input)`
   font-weight: 700;
   padding: 2rem 0;
   
+  :focus, :active {
+    color: #fff;
+    background: transparent;
+    border-color: #054bb9;
+    box-shadow: none;
+  }
+  
   ::placeholder {
     color: #fff;
     font-weight: 700;
